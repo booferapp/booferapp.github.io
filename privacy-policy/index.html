@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy – Boofer</title>
+    <meta name="description"
+        content="Learn how Boofer collects, uses, and protects your data. We are committed to privacy-first messaging." />
+    <link rel="canonical" href="https://booferapp.github.io/privacy-policy" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #0d0618;
+            --bg2: #130d24;
+            --card: #1a1030;
+            --border: rgba(139, 92, 246, 0.18);
+            --primary: #7c3aed;
+            --primary-light: #a855f7;
+            --primary-glow: rgba(124, 58, 237, 0.35);
+            --text: #f0e6ff;
+            --text-muted: #9a82c0;
+            --text-dim: #6b5a8e;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% -10%, rgba(124, 58, 237, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            height: 64px;
+            background: rgba(13, 6, 24, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 9px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .nav-logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text);
+        }
+
+        .nav-back {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--text);
+        }
+
+        .page-wrap {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 1.5rem 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header {
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--primary-light);
+            background: rgba(124, 58, 237, 0.12);
+            border: 1px solid rgba(124, 58, 237, 0.25);
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .page-meta {
+            color: var(--text-dim);
+            font-size: 13px;
+        }
+
+        .toc {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px 28px;
+            margin-bottom: 48px;
+        }
+
+        .toc h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .toc ol {
+            padding-left: 0;
+            list-style: none;
+            counter-reset: toc;
+        }
+
+        .toc li {
+            counter-increment: toc;
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc a::before {
+            content: counter(toc) ".";
+            color: var(--text-dim);
+            font-size: 12px;
+            min-width: 20px;
+        }
+
+        .toc a:hover {
+            color: var(--text);
+        }
+
+        .section-block {
+            margin-bottom: 48px;
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 .sec-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        ul,
+        ol {
+            color: var(--text-muted);
+            padding-left: 20px;
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .highlight-box {
+            background: rgba(124, 58, 237, 0.08);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--text);
+        }
+
+        strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--primary-light);
+        }
+
+        .contact-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-box p {
+            margin: 0;
+        }
+
+        footer-nav {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="nav-logo">
+            <div class="nav-logo-icon">B</div>
+            <span class="nav-logo-text">boofer</span>
+        </a>
+        <a href="/" class="nav-back">← Back to Home</a>
+    </nav>
+
+    <div class="page-wrap">
+        <div class="page-header">
+            <span class="page-badge">Legal</span>
+            <h1>Privacy Policy</h1>
+            <p class="page-meta">Effective Date: March 1, 2025 &nbsp;·&nbsp; Last Updated: March 8, 2026</p>
+        </div>
+
+        <div class="highlight-box">
+            <p>🔒 <strong>Our commitment:</strong> Boofer is built on the principle that privacy is a fundamental right.
+                We collect the minimum data necessary to operate the service and will never sell your personal
+                information to third parties.</p>
+        </div>
+
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ol>
+                <li><a href="#s1">Information We Collect</a></li>
+                <li><a href="#s2">How We Use Your Information</a></li>
+                <li><a href="#s3">Data Storage & Security</a></li>
+                <li><a href="#s4">End-to-End Encryption</a></li>
+                <li><a href="#s5">Data Sharing</a></li>
+                <li><a href="#s6">Your Rights</a></li>
+                <li><a href="#s7">Children's Privacy</a></li>
+                <li><a href="#s8">Data Retention</a></li>
+                <li><a href="#s9">Changes to This Policy</a></li>
+                <li><a href="#s10">Contact Us</a></li>
+            </ol>
+        </div>
+
+        <div id="s1" class="section-block">
+            <h2><span class="sec-num">1</span> Information We Collect</h2>
+            <p>We collect only what is necessary to provide and improve the Boofer service:</p>
+            <p><strong>Account Information:</strong></p>
+            <ul>
+                <li>Your chosen username / handle (publicly visible)</li>
+                <li>Email address (for account recovery only, never shown publicly)</li>
+                <li>Profile photo (optional, stored encrypted)</li>
+                <li>Your assigned virtual phone number (generated by Boofer)</li>
+            </ul>
+            <p><strong>Usage Data:</strong></p>
+            <ul>
+                <li>App version and device type (for compatibility)</li>
+                <li>Crash reports and error logs (anonymized)</li>
+                <li>Feature usage statistics (no personal identifiers)</li>
+            </ul>
+            <p><strong>We do NOT collect:</strong></p>
+            <ul>
+                <li>Your real phone number</li>
+                <li>Message content (all messages are end-to-end encrypted)</li>
+                <li>Call recordings or transcripts</li>
+                <li>Contact lists from your device</li>
+                <li>Location data</li>
+            </ul>
+        </div>
+
+        <div id="s2" class="section-block">
+            <h2><span class="sec-num">2</span> How We Use Your Information</h2>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Create and maintain your Boofer account</li>
+                <li>Deliver messages, calls, and notifications to the correct recipients</li>
+                <li>Provide account recovery services via email</li>
+                <li>Detect and prevent fraud, abuse, and security breaches</li>
+                <li>Fix bugs and improve app stability</li>
+                <li>Respond to support requests</li>
+            </ul>
+            <p>We do <strong>not</strong> use your data for targeted advertising or sell it to data brokers.</p>
+        </div>
+
+        <div id="s3" class="section-block">
+            <h2><span class="sec-num">3</span> Data Storage & Security</h2>
+            <p>Your data is stored on secure servers provided by Supabase (hosted on AWS). We implement
+                industry-standard security practices:</p>
+            <ul>
+                <li>All data in transit is encrypted using TLS 1.3</li>
+                <li>Data at rest is encrypted using AES-256</li>
+                <li>Regular security audits and penetration testing</li>
+                <li>Access to production systems is limited to authorized personnel only, with full audit logging</li>
+                <li>Automated anomaly detection for suspicious access patterns</li>
+            </ul>
+        </div>
+
+        <div id="s4" class="section-block">
+            <h2><span class="sec-num">4</span> End-to-End Encryption</h2>
+            <p>All messages and media sent through Boofer are end-to-end encrypted. This means:</p>
+            <ul>
+                <li>Only you and your intended recipient(s) can read your messages</li>
+                <li>Boofer servers store only encrypted ciphertext — we cannot read your messages</li>
+                <li>Even in the event of a server breach, your message content remains unreadable</li>
+                <li>Voice and video call audio/video streams are encrypted in transit</li>
+            </ul>
+            <div class="highlight-box">
+                <p>📋 Encryption keys are derived on your device and never leave it. Your private key is tied to your
+                    device and is never transmitted to our servers.</p>
+            </div>
+        </div>
+
+        <div id="s5" class="section-block">
+            <h2><span class="sec-num">5</span> Data Sharing</h2>
+            <p>We do not sell, trade, or rent your personal information. We may share limited data with:</p>
+            <ul>
+                <li><strong>Service providers</strong> — Infrastructure partners (Supabase, Firebase) that help us
+                    deliver the service, bound by data processing agreements</li>
+                <li><strong>Law enforcement</strong> — Only when legally compelled by a valid court order. Due to our
+                    encryption architecture, we can provide only metadata (account info, IP logs) — never message
+                    content</li>
+                <li><strong>Safety situations</strong> — If we have a good-faith belief that disclosure is necessary to
+                    prevent imminent risk of serious harm</li>
+            </ul>
+        </div>
+
+        <div id="s6" class="section-block">
+            <h2><span class="sec-num">6</span> Your Rights</h2>
+            <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+            <ul>
+                <li><strong>Access</strong> — Request a copy of the data we hold about you</li>
+                <li><strong>Correction</strong> — Update inaccurate personal information</li>
+                <li><strong>Deletion</strong> — Request deletion of your account and associated data</li>
+                <li><strong>Portability</strong> — Receive your data in a portable format</li>
+                <li><strong>Objection</strong> — Object to certain types of data processing</li>
+            </ul>
+            <p>To exercise any of these rights, contact us at <a
+                    href="mailto:privacy@booferapp.io">privacy@booferapp.io</a>. We will respond within 30 days.</p>
+        </div>
+
+        <div id="s7" class="section-block">
+            <h2><span class="sec-num">7</span> Children's Privacy</h2>
+            <p>Boofer is not directed to children under the age of 13. We do not knowingly collect personal information
+                from children under 13. If we discover that a child under 13 has provided us with personal information,
+                we will promptly delete such information.</p>
+            <p>If you are a parent or guardian and believe your child has provided us with personal information, please
+                contact us at <a href="mailto:privacy@booferapp.io">privacy@booferapp.io</a>.</p>
+        </div>
+
+        <div id="s8" class="section-block">
+            <h2><span class="sec-num">8</span> Data Retention</h2>
+            <p>We retain your data for as long as your account is active or as needed to provide you services:</p>
+            <ul>
+                <li>Account data is retained until you delete your account</li>
+                <li>Messages are retained on servers only until delivered, then purged (unless you enable cloud backup)
+                </li>
+                <li>Crash logs are anonymized and deleted after 90 days</li>
+                <li>Security audit logs are retained for 12 months</li>
+            </ul>
+            <p>Upon account deletion, we will delete or anonymize your personal data within 30 days, except as required
+                by law.</p>
+        </div>
+
+        <div id="s9" class="section-block">
+            <h2><span class="sec-num">9</span> Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by:</p>
+            <ul>
+                <li>Posting the new policy on this page with an updated "Last Updated" date</li>
+                <li>Sending an in-app notification for material changes</li>
+            </ul>
+            <p>Your continued use of Boofer after changes take effect constitutes your acceptance of the revised policy.
+            </p>
+        </div>
+
+        <div id="s10" class="section-block">
+            <h2><span class="sec-num">10</span> Contact Us</h2>
+            <p>If you have any questions or concerns about this Privacy Policy or our data practices, please reach out:
+            </p>
+            <div class="contact-box">
+                <h3>Privacy Team</h3>
+                <p>Email: <a href="mailto:privacy@booferapp.io">privacy@booferapp.io</a></p>
+                <p style="margin-top: 8px; font-size: 13px; color: var(--text-dim);">We aim to respond within 5 business
+                    days.</p>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/terms-of-service">Terms of Service</a>
+            <a href="/cookie-policy">Cookie Policy</a>
+            <a href="/about">About</a>
+            <a href="/support">Support</a>
+        </div>
+    </div>
+</body>
+
+</html>

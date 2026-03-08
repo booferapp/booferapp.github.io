@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service – Boofer</title>
+    <meta name="description" content="Read the Terms of Service for Boofer — the privacy-first messaging app." />
+    <link rel="canonical" href="https://booferapp.github.io/terms-of-service" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #0d0618;
+            --bg2: #130d24;
+            --card: #1a1030;
+            --border: rgba(139, 92, 246, 0.18);
+            --primary: #7c3aed;
+            --primary-light: #a855f7;
+            --primary-glow: rgba(124, 58, 237, 0.35);
+            --text: #f0e6ff;
+            --text-muted: #9a82c0;
+            --text-dim: #6b5a8e;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% -10%, rgba(124, 58, 237, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            height: 64px;
+            background: rgba(13, 6, 24, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 9px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .nav-logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text);
+        }
+
+        .nav-back {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--text);
+        }
+
+        .page-wrap {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 1.5rem 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header {
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--primary-light);
+            background: rgba(124, 58, 237, 0.12);
+            border: 1px solid rgba(124, 58, 237, 0.25);
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .page-meta {
+            color: var(--text-dim);
+            font-size: 13px;
+        }
+
+        .toc {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px 28px;
+            margin-bottom: 48px;
+        }
+
+        .toc h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .toc ol {
+            padding-left: 0;
+            list-style: none;
+            counter-reset: toc;
+        }
+
+        .toc li {
+            counter-increment: toc;
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc a::before {
+            content: counter(toc) ".";
+            color: var(--text-dim);
+            font-size: 12px;
+            min-width: 20px;
+        }
+
+        .toc a:hover {
+            color: var(--text);
+        }
+
+        .section-block {
+            margin-bottom: 48px;
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 .sec-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        ul,
+        ol {
+            color: var(--text-muted);
+            padding-left: 20px;
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .highlight-box {
+            background: rgba(124, 58, 237, 0.08);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .warning-box {
+            background: rgba(249, 115, 22, 0.07);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p,
+        .warning-box p {
+            margin: 0;
+            color: var(--text);
+        }
+
+        strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--primary-light);
+        }
+
+        .contact-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-box p {
+            margin: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="nav-logo">
+            <div class="nav-logo-icon">B</div>
+            <span class="nav-logo-text">boofer</span>
+        </a>
+        <a href="/" class="nav-back">← Back to Home</a>
+    </nav>
+
+    <div class="page-wrap">
+        <div class="page-header">
+            <span class="page-badge">Legal</span>
+            <h1>Terms of Service</h1>
+            <p class="page-meta">Effective Date: March 1, 2025 &nbsp;·&nbsp; Last Updated: March 8, 2026</p>
+        </div>
+
+        <div class="highlight-box">
+            <p>📋 <strong>Summary:</strong> Please read these Terms carefully. By using Boofer, you agree to these
+                Terms. If you do not agree, please do not use the service.</p>
+        </div>
+
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ol>
+                <li><a href="#t1">Acceptance of Terms</a></li>
+                <li><a href="#t2">Eligibility</a></li>
+                <li><a href="#t3">Account Registration</a></li>
+                <li><a href="#t4">Acceptable Use</a></li>
+                <li><a href="#t5">Prohibited Activities</a></li>
+                <li><a href="#t6">Intellectual Property</a></li>
+                <li><a href="#t7">Privacy</a></li>
+                <li><a href="#t8">Termination</a></li>
+                <li><a href="#t9">Disclaimer of Warranties</a></li>
+                <li><a href="#t10">Limitation of Liability</a></li>
+                <li><a href="#t11">Governing Law</a></li>
+                <li><a href="#t12">Changes to Terms</a></li>
+                <li><a href="#t13">Contact</a></li>
+            </ol>
+        </div>
+
+        <div id="t1" class="section-block">
+            <h2><span class="sec-num">1</span> Acceptance of Terms</h2>
+            <p>By downloading, installing, or using the Boofer application ("Service"), you agree to be bound by these
+                Terms of Service ("Terms"). These Terms constitute a legally binding agreement between you and Boofer
+                App ("Boofer," "we," "us," or "our").</p>
+            <p>If you are using Boofer on behalf of an organization, you are agreeing to these Terms on behalf of that
+                organization.</p>
+        </div>
+
+        <div id="t2" class="section-block">
+            <h2><span class="sec-num">2</span> Eligibility</h2>
+            <p>You must be at least <strong>13 years of age</strong> to use Boofer. By using the Service, you represent
+                and warrant that you are at least 13 years old.</p>
+            <p>If you are between 13 and 18 years of age, you must have the permission of your parent or legal guardian
+                to use Boofer.</p>
+            <p>You may not use Boofer if you are prohibited from receiving services under applicable law.</p>
+        </div>
+
+        <div id="t3" class="section-block">
+            <h2><span class="sec-num">3</span> Account Registration</h2>
+            <p>To use Boofer, you must create an account. You agree to:</p>
+            <ul>
+                <li>Provide accurate and complete information during registration</li>
+                <li>Keep your account credentials confidential and secure</li>
+                <li>Not share your account with any other person</li>
+                <li>Notify us immediately if you suspect unauthorized access to your account</li>
+                <li>Be responsible for all activity that occurs under your account</li>
+            </ul>
+            <p>Your username (handle) must not impersonate another person, be offensive, or violate any third-party
+                rights.</p>
+        </div>
+
+        <div id="t4" class="section-block">
+            <h2><span class="sec-num">4</span> Acceptable Use</h2>
+            <p>Boofer is provided for lawful personal and professional communication. You agree to use Boofer only for
+                lawful purposes and in a manner consistent with these Terms and all applicable local, national, and
+                international laws.</p>
+            <p>You retain ownership of the content you send through Boofer. By using Boofer, you grant us a limited
+                license to transmit, store (temporarily), and display your content solely as necessary to provide the
+                Service.</p>
+        </div>
+
+        <div id="t5" class="section-block">
+            <h2><span class="sec-num">5</span> Prohibited Activities</h2>
+            <p>You agree not to use Boofer to:</p>
+            <ul>
+                <li>Send spam, unsolicited messages, or bulk communications</li>
+                <li>Harass, bully, threaten, or intimidate other users</li>
+                <li>Distribute malware, viruses, or harmful code</li>
+                <li>Share illegal content, including child sexual abuse material (CSAM)</li>
+                <li>Impersonate another person or entity</li>
+                <li>Engage in fraud, phishing, or financial scams</li>
+                <li>Attempt to gain unauthorized access to any systems or networks</li>
+                <li>Interfere with or disrupt the integrity of the Service</li>
+                <li>Use automated tools (bots) to interact with Boofer without authorization</li>
+                <li>Violate the rights of any third party, including intellectual property rights</li>
+            </ul>
+            <div class="warning-box">
+                <p>⚠️ Violations of these terms may result in immediate account suspension or termination, and may be
+                    reported to relevant law enforcement authorities.</p>
+            </div>
+        </div>
+
+        <div id="t6" class="section-block">
+            <h2><span class="sec-num">6</span> Intellectual Property</h2>
+            <p>The Boofer name, logo, app design, and all related intellectual property are owned by Boofer App. You may
+                not copy, modify, distribute, sell, or lease any part of our Service or its content.</p>
+            <p>You are granted a limited, non-exclusive, non-transferable license to use Boofer for personal,
+                non-commercial purposes.</p>
+        </div>
+
+        <div id="t7" class="section-block">
+            <h2><span class="sec-num">7</span> Privacy</h2>
+            <p>Your use of Boofer is also governed by our <a href="/privacy-policy">Privacy Policy</a>, which is
+                incorporated into these Terms by reference. Please review the Privacy Policy carefully.</p>
+        </div>
+
+        <div id="t8" class="section-block">
+            <h2><span class="sec-num">8</span> Termination</h2>
+            <p>We reserve the right to suspend or terminate your account at any time for violation of these Terms,
+                without prior notice. You may also delete your account at any time from within the app.</p>
+            <p>Upon termination, your license to use the Service immediately terminates. We will process data deletion
+                as described in our Privacy Policy.</p>
+        </div>
+
+        <div id="t9" class="section-block">
+            <h2><span class="sec-num">9</span> Disclaimer of Warranties</h2>
+            <p>BOOFER IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+                TO THE FULLEST EXTENT PERMITTED BY LAW, BOOFER DISCLAIMS ALL WARRANTIES, INCLUDING:</p>
+            <ul>
+                <li>Implied warranties of merchantability and fitness for a particular purpose</li>
+                <li>Warranties of uninterrupted or error-free service</li>
+                <li>Warranties regarding the accuracy or completeness of any content</li>
+            </ul>
+        </div>
+
+        <div id="t10" class="section-block">
+            <h2><span class="sec-num">10</span> Limitation of Liability</h2>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, BOOFER SHALL NOT BE LIABLE FOR ANY INDIRECT,
+                INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR DATA, ARISING OUT OF
+                OR RELATED TO YOUR USE OF THE SERVICE.</p>
+            <p>Our total liability to you for any claim arising from or related to these Terms shall not exceed $100 USD
+                or the amount you paid to Boofer in the past 12 months, whichever is greater.</p>
+        </div>
+
+        <div id="t11" class="section-block">
+            <h2><span class="sec-num">11</span> Governing Law</h2>
+            <p>These Terms shall be governed by and construed in accordance with applicable laws, without regard to
+                conflict of law principles. Any disputes arising from these Terms shall be resolved through binding
+                arbitration, except where prohibited by law.</p>
+        </div>
+
+        <div id="t12" class="section-block">
+            <h2><span class="sec-num">12</span> Changes to Terms</h2>
+            <p>We may modify these Terms at any time. We will provide notice of material changes through the app or by
+                email. Your continued use of Boofer after the changes take effect constitutes your acceptance of the new
+                Terms.</p>
+        </div>
+
+        <div id="t13" class="section-block">
+            <h2><span class="sec-num">13</span> Contact</h2>
+            <p>If you have any questions about these Terms, please contact us:</p>
+            <div class="contact-box">
+                <h3>Legal Team</h3>
+                <p>Email: <a href="mailto:legal@booferapp.io">legal@booferapp.io</a></p>
+                <p style="margin-top: 8px; font-size: 13px; color: var(--text-dim);">We aim to respond within 5 business
+                    days.</p>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/cookie-policy">Cookie Policy</a>
+            <a href="/about">About</a>
+            <a href="/support">Support</a>
+        </div>
+    </div>
+</body>
+
+</html>

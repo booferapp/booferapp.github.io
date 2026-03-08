@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support – Boofer</title>
+    <meta name="description"
+        content="Get help with Boofer. Contact our support team or find answers to frequently asked questions." />
+    <link rel="canonical" href="https://booferapp.github.io/support" />
+    <link rel="icon" href="/favicon.ico" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #0d0618;
+            --card: #1a1030;
+            --border: rgba(139, 92, 246, 0.18);
+            --primary: #7c3aed;
+            --primary-light: #a855f7;
+            --primary-glow: rgba(124, 58, 237, 0.35);
+            --text: #f0e6ff;
+            --text-muted: #9a82c0;
+            --text-dim: #6b5a8e;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% -10%, rgba(124, 58, 237, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            height: 64px;
+            background: rgba(13, 6, 24, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 9px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .nav-logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text);
+        }
+
+        .nav-back {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-back:hover {
+            color: var(--text);
+        }
+
+        .page-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 1.5rem 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--primary-light);
+            background: rgba(124, 58, 237, 0.12);
+            border: 1px solid rgba(124, 58, 237, 0.25);
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .page-desc {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .contact-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.4);
+        }
+
+        .contact-icon {
+            font-size: 36px;
+            margin-bottom: 14px;
+        }
+
+        .contact-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .contact-card p {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .faq-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-q {
+            padding: 18px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            font-size: 15px;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .faq-q:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .faq-icon {
+            color: var(--primary-light);
+            font-size: 20px;
+            transition: transform 0.25s;
+            flex-shrink: 0;
+        }
+
+        .faq-a {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-a {
+            max-height: 300px;
+            padding: 0 20px 18px;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="nav-logo">
+            <div class="nav-logo-icon">B</div>
+            <span class="nav-logo-text">boofer</span>
+        </a>
+        <a href="/" class="nav-back">← Back to Home</a>
+    </nav>
+
+    <div class="page-wrap">
+        <div class="page-header">
+            <span class="page-badge">Help Center</span>
+            <h1>How can we help?</h1>
+            <p class="page-desc">Find answers to common questions or reach out to our support team.</p>
+        </div>
+
+        <div class="contact-grid">
+            <a href="mailto:support@booferapp.io" class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email Support</h3>
+                <p>support@booferapp.io<br />Response within 48 hours</p>
+            </a>
+            <a href="mailto:privacy@booferapp.io" class="contact-card">
+                <div class="contact-icon">🔒</div>
+                <h3>Privacy Requests</h3>
+                <p>privacy@booferapp.io<br />Data & privacy inquiries</p>
+            </a>
+            <a href="mailto:legal@booferapp.io" class="contact-card">
+                <div class="contact-icon">⚖️</div>
+                <h3>Legal</h3>
+                <p>legal@booferapp.io<br />Legal & compliance matters</p>
+            </a>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    What is Boofer and how does it work?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-a">Boofer is a privacy-first messaging app. You get a unique virtual phone number and a
+                    custom handle. You can chat, call, and video call with other Boofer users without revealing your
+                    real identity or phone number. Everything is end-to-end encrypted.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    Is Boofer really free?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-a">Yes! Core features — messaging, voice calls, video calls, file sharing — are
+                    completely free. We plan to offer optional premium features in the future, but the core experience
+                    will always be free.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    How do I find someone on Boofer?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-a">You can find people by their Boofer handle (@username) or their virtual number. You
+                    can also share a profile link — booferapp.github.io/p/theirhandle — which opens directly in the app.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    Can I use Boofer without giving my real phone number?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-a">Absolutely. Boofer does not require your real phone number to register. You only need
+                    a username and optionally an email for account recovery. You receive a Boofer virtual number
+                    automatically.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    What happens if I lose my device?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-a">You can recover your account using your registered email address. Your messages are
+                    end-to-end encrypted, so message history on the old device cannot be transferred (by design, for
+                    privacy). Your account, contacts, and profile will be fully restored on your new device.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    How do I delete my account?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-a">Go to Settings → Account → Delete Account within the Boofer app. This permanently
+                    deletes your account and all associated data within 30 days. This action is irreversible. If you
+                    cannot access the app, email support@booferapp.io.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    How do I report someone's profile or message?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-a">Tap and hold a message or visit a profile and tap the three-dot menu → Report. Our
+                    moderation team reviews all reports. You can also email support@booferapp.io with details.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    What do the /p/ and /c/ links do?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-a">
+                    <strong>booferapp.github.io/p/handle</strong> — Opens that user's Boofer profile in the
+                    app.<br /><br />
+                    <strong>booferapp.github.io/c/handle</strong> — Opens a direct chat with that user in the
+                    app.<br /><br />
+                    If you don't have Boofer installed, you'll be prompted to download it.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-of-service">Terms of Service</a>
+            <a href="/cookie-policy">Cookie Policy</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleFaq(el) {
+            const item = el.parentElement;
+            const wasOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+            if (!wasOpen) item.classList.add('open');
+        }
+    </script>
+</body>
+
+</html>

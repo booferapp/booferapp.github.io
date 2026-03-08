@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boofer</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="robots" content="noindex" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #0d0618;
+            --card: #1a1030;
+            --border: rgba(139, 92, 246, 0.18);
+            --primary: #7c3aed;
+            --primary-light: #a855f7;
+            --primary-glow: rgba(124, 58, 237, 0.35);
+            --text: #f0e6ff;
+            --text-muted: #9a82c0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% -20%, rgba(124, 58, 237, 0.3) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 52px 40px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            color: #fff;
+            margin: 0 auto 24px;
+            box-shadow: 0 0 40px var(--primary-glow);
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+        .handle-display {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.25);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 15px;
+            word-break: break-all;
+            color: var(--primary-light);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #fff;
+            box-shadow: 0 0 20px var(--primary-glow);
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 35px var(--primary-glow);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border);
+            color: var(--text);
+            width: 100%;
+            justify-content: center;
+            margin-top: 12px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .spinner {
+            border: 3px solid rgba(139, 92, 246, 0.2);
+            border-top: 3px solid var(--primary-light);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            animation: spin 0.8s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #status-msg {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        .not-found-code {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 96px;
+            font-weight: 700;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(168, 85, 247, 0.2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card" id="main-card">
+        <!-- Content injected by JS -->
+        <div class="spinner"></div>
+        <p id="status-msg">Redirecting...</p>
+    </div>
+
+    <script>
+        (function () {
+            var path = window.location.pathname;
+            var card = document.getElementById('main-card');
+
+            // ── Helper: build deep link intent URL for Android ──
+            function buildAppLink(screen, handle) {
+                // Android App Link / intent
+                var appScheme = 'boofer://' + screen + '/' + encodeURIComponent(handle);
+                var playStoreUrl = 'https://play.google.com/store/apps/details?id=com.booferapp.boofer';
+                return { appScheme: appScheme, playStoreUrl: playStoreUrl };
+            }
+
+            // ── Route: /admin or /admin/ ──
+            if (path === '/admin' || path === '/admin/') {
+                window.location.replace('/admin/index.html');
+                return;
+            }
+
+            // ── Route: /p/[handle] – Profile view ──
+            var profileMatch = path.match(/^\/p\/(.+)$/);
+            if (profileMatch) {
+                var handle = decodeURIComponent(profileMatch[1]).replace(/\/$/, '');
+                var links = buildAppLink('profile', handle);
+
+                card.innerHTML = [
+                    '<div class="logo">B</div>',
+                    '<h1>Boofer Profile</h1>',
+                    '<p>Open this profile in the Boofer app.</p>',
+                    '<div class="handle-display">@' + escapeHtml(handle) + '</div>',
+                    '<a href="' + escapeHtml(links.appScheme) + '" class="btn btn-primary" id="open-app-btn">',
+                    '📱 Open in Boofer App',
+                    '</a>',
+                    '<a href="' + escapeHtml(links.playStoreUrl) + '" class="btn btn-secondary" id="get-app-btn">',
+                    'Don\'t have Boofer? Download Free',
+                    '</a>',
+                ].join('');
+
+                // Auto-attempt deep link
+                setTimeout(function () {
+                    window.location.href = links.appScheme;
+                }, 600);
+                return;
+            }
+
+            // ── Route: /c/[handle] – Direct chat ──
+            var chatMatch = path.match(/^\/c\/(.+)$/);
+            if (chatMatch) {
+                var chatHandle = decodeURIComponent(chatMatch[1]).replace(/\/$/, '');
+                var chatLinks = buildAppLink('chat', chatHandle);
+
+                card.innerHTML = [
+                    '<div class="logo" style="background:linear-gradient(135deg,#0891b2,#06b6d4)">B</div>',
+                    '<h1>Open Chat in Boofer</h1>',
+                    '<p>Start a private, encrypted conversation.</p>',
+                    '<div class="handle-display">💬 Chat with @' + escapeHtml(chatHandle) + '</div>',
+                    '<a href="' + escapeHtml(chatLinks.appScheme) + '" class="btn btn-primary" id="open-chat-btn">',
+                    '💬 Open Chat in App',
+                    '</a>',
+                    '<a href="' + escapeHtml(chatLinks.playStoreUrl) + '" class="btn btn-secondary" id="get-app-chat-btn">',
+                    'Don\'t have Boofer? Download Free',
+                    '</a>',
+                ].join('');
+
+                // Auto-attempt deep link
+                setTimeout(function () {
+                    window.location.href = chatLinks.appScheme;
+                }, 600);
+                return;
+            }
+
+            // ── Default 404 ──
+            card.innerHTML = [
+                '<div class="not-found-code">404</div>',
+                '<h1>Page not found</h1>',
+                '<p>The page you\'re looking for doesn\'t exist or has been moved.</p>',
+                '<a href="/" class="btn btn-primary" style="margin-top:24px">← Back to Home</a>',
+                '<a href="/support" class="btn btn-secondary">Contact Support</a>',
+            ].join('');
+
+            function escapeHtml(str) {
+                return String(str)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;');
+            }
+        })();
+
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+    </script>
+</body>
+
+</html>
