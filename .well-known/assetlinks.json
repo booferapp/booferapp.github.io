@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.shaadow.boofer.android",
+            "sha256_cert_fingerprints": [
+                "8D:83:53:C0:19:E0:82:89:9D:CE:06:54:1A:8B:09:5A:C6:FC:6C:20:8A:47:26:19:C0:71:40:7C:40:89:0F:F1"
+            ]
+        }
+    }
+]
