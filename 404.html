@@ -205,6 +205,20 @@
                 return;
             }
 
+            // ── Route: Legacy Legal Redirects ──
+            var legacyPaths = {
+                '/privacy-policy': '/legal/privacy-policy',
+                '/privacy-policy/': '/legal/privacy-policy/',
+                '/terms-of-service': '/legal/terms-of-service',
+                '/terms-of-service/': '/legal/terms-of-service/',
+                '/cookie-policy': '/legal/cookie-policy',
+                '/cookie-policy/': '/legal/cookie-policy/'
+            };
+            if (legacyPaths[path]) {
+                window.location.replace(legacyPaths[path]);
+                return;
+            }
+
             // ── Route: /p/[handle] – Profile view ──
             var profileMatch = path.match(/^\/p\/(.+)$/);
             if (profileMatch) {
