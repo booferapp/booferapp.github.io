@@ -200,7 +200,7 @@
             }
 
             // ── Route: /admin or /admin/ ──
-            if (path === '/admin' || path === '/admin/') {
+            if (path.startsWith('/admin')) {
                 window.location.replace('/admin/index.html');
                 return;
             }
