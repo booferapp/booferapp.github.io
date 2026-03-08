@@ -146,7 +146,7 @@
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             margin-bottom: 60px;
         }
@@ -155,17 +155,22 @@
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 28px;
+            padding: 28px 20px;
             text-align: center;
-            transition: transform 0.2s, border-color 0.2s;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
             text-decoration: none;
             color: var(--text);
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
         }
 
         .contact-card:hover {
             transform: translateY(-4px);
             border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(124, 58, 237, 0.08);
         }
 
         .contact-icon {
@@ -183,7 +188,36 @@
         .contact-card p {
             color: var(--text-muted);
             font-size: 13px;
-            margin: 0;
+            margin: 0 0 14px;
+            line-height: 1.5;
+        }
+
+        .contact-cta {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            background: rgba(124, 58, 237, 0.15);
+            color: var(--primary-light);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            transition: background 0.2s, border-color 0.2s;
+            margin-top: auto;
+        }
+
+        .contact-card:hover .contact-cta {
+            background: rgba(124, 58, 237, 0.25);
+            border-color: rgba(124, 58, 237, 0.5);
+        }
+
+        @media (max-width: 700px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                min-height: auto;
+            }
         }
 
         .faq-section h2 {
@@ -285,19 +319,22 @@
                 class="contact-card">
                 <div class="contact-icon">📧</div>
                 <h3>Email Support</h3>
-                <p>shaadowplatforms.g92192@gmail.com<br />General help & support</p>
+                <p>General help, bug reports,<br />and account questions</p>
+                <span class="contact-cta">Send Email →</span>
             </a>
             <a href="mailto:shaadowplatforms.g92192@gmail.com?subject=[Boofer Privacy] Privacy Request&body=Hello Boofer Privacy Team,%0A%0AI have a request regarding my privacy/data:%0A%0A[Describe your request here]"
                 class="contact-card">
                 <div class="contact-icon">🔒</div>
                 <h3>Privacy Requests</h3>
-                <p>shaadowplatforms.g92192@gmail.com<br />Data & privacy inquiries</p>
+                <p>Data access, deletion,<br />and privacy inquiries</p>
+                <span class="contact-cta">Send Email →</span>
             </a>
             <a href="mailto:shaadowplatforms.g92192@gmail.com?subject=[Boofer Legal] Legal Inquiry&body=Hello Boofer Legal Team,%0A%0AI am writing to discuss legal matters regarding Boofer:%0A%0A[Describe the matter here]"
                 class="contact-card">
                 <div class="contact-icon">⚖️</div>
                 <h3>Legal</h3>
-                <p>shaadowplatforms.g92192@gmail.com<br />Legal & compliance matters</p>
+                <p>Legal notices, compliance,<br />and partnership inquiries</p>
+                <span class="contact-cta">Send Email →</span>
             </a>
         </div>
 
