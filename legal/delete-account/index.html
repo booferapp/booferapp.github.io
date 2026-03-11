@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Account – Boofer</title>
+    <meta name="description"
+        content="Learn how to delete your Boofer account and associated data. We provide options for temporary deactivation and permanent deletion." />
+    <link rel="canonical" href="https://booferapp.github.io/legal/delete-account" />
+    <link rel="icon" href="/logo.jpg" type="image/jpeg" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #0d0618;
+            --bg2: #130d24;
+            --card: #1a1030;
+            --border: rgba(139, 92, 246, 0.18);
+            --primary: #7c3aed;
+            --primary-light: #a855f7;
+            --primary-glow: rgba(124, 58, 237, 0.35);
+            --text: #f0e6ff;
+            --text-muted: #9a82c0;
+            --text-dim: #6b5a8e;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% -10%, rgba(124, 58, 237, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            height: 64px;
+            background: rgba(13, 6, 24, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 9px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .nav-logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 2px;
+        }
+
+        .nav-logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text);
+        }
+
+        .nav-back {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--text);
+        }
+
+        .page-wrap {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 1.5rem 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header {
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--primary-light);
+            background: rgba(124, 58, 237, 0.12);
+            border: 1px solid rgba(124, 58, 237, 0.25);
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .page-meta {
+            color: var(--text-dim);
+            font-size: 13px;
+        }
+
+        .toc {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px 28px;
+            margin-bottom: 48px;
+        }
+
+        .toc h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .toc ol {
+            padding-left: 0;
+            list-style: none;
+            counter-reset: toc;
+        }
+
+        .toc li {
+            counter-increment: toc;
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc a::before {
+            content: counter(toc) ".";
+            color: var(--text-dim);
+            font-size: 12px;
+            min-width: 20px;
+        }
+
+        .toc a:hover {
+            color: var(--text);
+        }
+
+        .section-block {
+            margin-bottom: 48px;
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 .sec-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        ul,
+        ol {
+            color: var(--text-muted);
+            padding-left: 20px;
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .highlight-box {
+            background: rgba(124, 58, 237, 0.08);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--text);
+        }
+
+        strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--primary-light);
+        }
+
+        .contact-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-box p {
+            margin: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="nav-logo">
+            <div class="nav-logo-icon"><img src="/logo.jpg" alt="Boofer" /></div>
+            <span class="nav-logo-text">boofer</span>
+        </a>
+        <a href="/" class="nav-back">← Back to Home</a>
+    </nav>
+
+    <div class="page-wrap">
+        <div class="page-header">
+            <span class="page-badge">Legal</span>
+            <h1>Delete Account</h1>
+            <p class="page-meta">Last Updated: March 11, 2026</p>
+        </div>
+
+        <div class="highlight-box">
+            <p>👋 <strong>Account Control:</strong> At Boofer, you have full control over your data. You can choose to temporarily hide your account, deactivate it for later recovery, or permanently erase all your data from our servers.</p>
+        </div>
+
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ol>
+                <li><a href="#in-app">How to Delete via the App</a></li>
+                <li><a href="#web-request">Request Deletion via Web/Email</a></li>
+                <li><a href="#options">Deletion Options Explained</a></li>
+                <li><a href="#data-impact">Data Impact & Retention</a></li>
+                <li><a href="#contact">Contact Support</a></li>
+            </ol>
+        </div>
+
+        <div id="in-app" class="section-block">
+            <h2><span class="sec-num">1</span> How to Delete via the App</h2>
+            <p>The fastest way to delete your account or specific profiles is directly within the Boofer app. Follow these steps:</p>
+            <ol>
+                <li>Open the <strong>Boofer</strong> app on your device.</li>
+                <li>Tap on your <strong>Profile Icon</strong> or go to <strong>Settings</strong>.</li>
+                <li>Select <strong>Account</strong> or <strong>Account Settings</strong>.</li>
+                <li>Scroll down to the <strong>Account Actions</strong> section.</li>
+                <li>Choose your preferred deletion method: <strong>Temporary Delete</strong> or <strong>Permanent Delete</strong>.</li>
+                <li>Follow the on-screen prompts to confirm your choice.</li>
+            </ol>
+        </div>
+
+        <div id="web-request" class="section-block">
+            <h2><span class="sec-num">2</span> Request Deletion via Web/Email</h2>
+            <p>If you no longer have access to the app, you can request account deletion by contacting our privacy team. To process your request, we need to verify your identity.</p>
+            <p>Please send an email from your recovery email address to:</p>
+            <div class="contact-box">
+                <p>Email: <a href="mailto:shaadowplatforms.g92192@gmail.com?subject=Account Deletion Request&body=I would like to request the deletion of my Boofer account.%0A%0AMy Handle: @[Your Username]%0AMy Virtual Number: [Your Virtual Number]%0ARecovery Email: [Your Email]">shaadowplatforms.g92192@gmail.com</a></p>
+            </div>
+            <p>Include your <strong>Handle (@username)</strong> and <strong>Virtual Phone Number</strong> in the request. We will process your request within 7-10 business days.</p>
+        </div>
+
+        <div id="options" class="section-block">
+            <h2><span class="sec-num">3</span> Deletion Options Explained</h2>
+            <p>Boofer offers three levels of account control to suit your needs:</p>
+            <ul>
+                <li><strong>Freeze Account:</strong> This hides your profile and messages from other users. You can reactivate your account anytime by simply logging back in. Your data is kept secure and intact.</li>
+                <li><strong>Temporary Delete (Deactivation):</strong> Your account is deactivated and hidden. You have a <strong>30-day grace period</strong> to recover your account by logging in. After 30 days, the account and all associated data are automatically scheduled for permanent deletion.</li>
+                <li><strong>Permanent Delete:</strong> This is an immediate and irreversible action. All your chat history, media, contacts, and profile information are permanently erased from our servers. <strong>This action cannot be undone.</strong></li>
+            </ul>
+        </div>
+
+        <div id="data-impact" class="section-block">
+            <h2><span class="sec-num">4</span> Data Impact & Retention</h2>
+            <p>When you choose <strong>Permanent Delete</strong>, the following data is affected:</p>
+            <ul>
+                <li><strong>Profile Data:</strong> Your handle, bio, name, and profile picture are immediately removed.</li>
+                <li><strong>Messages & Media:</strong> All end-to-end encrypted messages and media files stored on our servers for delivery are purged.</li>
+                <li><strong>Virtual Number:</strong> Your unique Boofer virtual number is released and may be recycled after a cooling-off period.</li>
+                <li><strong>Subordinate Profiles:</strong> If you delete your primary account, all associated subordinate profiles are also deleted.</li>
+            </ul>
+            <p><strong>Retention Period:</strong> For security and legal compliance, some anonymized metadata (such as transaction IDs for payments or security audit logs) may be retained for up to 12 months, as detailed in our <a href="/legal/privacy-policy">Privacy Policy</a>.</p>
+        </div>
+
+        <div id="contact" class="section-block">
+            <h2><span class="sec-num">5</span> Contact Support</h2>
+            <p>If you have any questions or concerns about account deletion or your data privacy, please reach out:</p>
+            <div class="contact-box">
+                <h3>Privacy Team</h3>
+                <p>Email: <a href="mailto:shaadowplatforms.g92192@gmail.com?subject=[Boofer Privacy] Account Deletion Inquiry">shaadowplatforms.g92192@gmail.com</a></p>
+                <p style="margin-top: 8px; font-size: 13px; color: var(--text-dim);">We aim to respond within 5 business days.</p>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/legal/privacy-policy" style="color:var(--text-dim) !important">Privacy Policy</a>
+            <a href="/legal/terms-of-service" style="color:var(--text-dim) !important">Terms of Service</a>
+            <a href="/support" style="color:var(--text-dim) !important">Support</a>
+            <p style="width:100%;text-align:center;color:var(--text-dim);font-size:12px;margin-top:8px">&copy; 2026 Shaadow Platforms. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>
