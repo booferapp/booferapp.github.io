@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Child Safety Standards – Boofer</title>
+    <meta name="description"
+        content="Boofer's commitment to child safety. Learn about our standards against child sexual abuse and exploitation (CSAE) and how to report concerns." />
+    <link rel="canonical" href="https://booferapp.github.io/legal/child-safety-standards" />
+    <link rel="icon" href="/logo.jpg" type="image/jpeg" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #0d0618;
+            --bg2: #130d24;
+            --card: #1a1030;
+            --border: rgba(139, 92, 246, 0.18);
+            --primary: #7c3aed;
+            --primary-light: #a855f7;
+            --primary-glow: rgba(124, 58, 237, 0.35);
+            --text: #f0e6ff;
+            --text-muted: #9a82c0;
+            --text-dim: #6b5a8e;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% -10%, rgba(124, 58, 237, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            height: 64px;
+            background: rgba(13, 6, 24, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 9px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .nav-logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 2px;
+        }
+
+        .nav-logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text);
+        }
+
+        .nav-back {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--text);
+        }
+
+        .page-wrap {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 1.5rem 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header {
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--primary-light);
+            background: rgba(124, 58, 237, 0.12);
+            border: 1px solid rgba(124, 58, 237, 0.25);
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .page-meta {
+            color: var(--text-dim);
+            font-size: 13px;
+        }
+
+        .toc {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px 28px;
+            margin-bottom: 48px;
+        }
+
+        .toc h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .toc ol {
+            padding-left: 0;
+            list-style: none;
+            counter-reset: toc;
+        }
+
+        .toc li {
+            counter-increment: toc;
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc a::before {
+            content: counter(toc) ".";
+            color: var(--text-dim);
+            font-size: 12px;
+            min-width: 20px;
+        }
+
+        .toc a:hover {
+            color: var(--text);
+        }
+
+        .section-block {
+            margin-bottom: 48px;
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 .sec-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        ul,
+        ol {
+            color: var(--text-muted);
+            padding-left: 20px;
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .highlight-box {
+            background: rgba(124, 58, 237, 0.08);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--text);
+        }
+
+        strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--primary-light);
+        }
+
+        .contact-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-box p {
+            margin: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="nav-logo">
+            <div class="nav-logo-icon"><img src="/logo.jpg" alt="Boofer" /></div>
+            <span class="nav-logo-text">boofer</span>
+        </a>
+        <a href="/" class="nav-back">← Back to Home</a>
+    </nav>
+
+    <div class="page-wrap">
+        <div class="page-header">
+            <span class="page-badge">Legal</span>
+            <h1>Child Safety Standards</h1>
+            <p class="page-meta">Last Updated: March 11, 2026</p>
+        </div>
+
+        <div class="highlight-box">
+            <p>🛡️ <strong>Safety First:</strong> Boofer is committed to providing a safe environment for all users. We have zero tolerance for child sexual abuse material (CSAM) and conduct that endangers minors.</p>
+        </div>
+
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ol>
+                <li><a href="#standards">Our Safety Standards</a></li>
+                <li><a href="#prevention">Prevention Practices</a></li>
+                <li><a href="#reporting">How to Report Concerns</a></li>
+                <li><a href="#compliance">Legal Compliance</a></li>
+                <li><a href="#contact">Contact the Safety Team</a></li>
+            </ol>
+        </div>
+
+        <div id="standards" class="section-block">
+            <h2><span class="sec-num">1</span> Our Safety Standards</h2>
+            <p>Boofer prohibits the use of its platform for the following activities:</p>
+            <ul>
+                <li>The creation, distribution, or promotion of Child Sexual Abuse Material (CSAM).</li>
+                <li>Solicitation or grooming of minors.</li>
+                <li>Engaging in sexually explicit conduct involving or targeted at minors.</li>
+                <li>Any behavior that exploits or endangers children.</li>
+            </ul>
+        </div>
+
+        <div id="prevention" class="section-block">
+            <h2><span class="sec-num">2</span> Prevention Practices</h2>
+            <p>To uphold these standards, Boofer implements several layers of protection:</p>
+            <ul>
+                <li><strong>Encryption with Safety:</strong> While messages are end-to-end encrypted, we use metadata analysis and user reports to identify potential bad actors.</li>
+                <li><strong>Automated Scanning:</strong> We use industry-standard hashing technology (where applicable and allowed by privacy laws) to prevent the upload of known CSAM.</li>
+                <li><strong>Age Verification:</strong> Boofer is strictly for users aged 13 and older. We use technical signals to identify and remove accounts belonging to under-age users.</li>
+                <li><strong>Community Moderation:</strong> Our safety team reviews all reports related to minor safety with highest priority.</li>
+            </ul>
+        </div>
+
+        <div id="reporting" class="section-block">
+            <h2><span class="sec-num">3</span> How to Report Concerns</h2>
+            <p>If you encounter content or a user that violates our child safety standards, please report it immediately:</p>
+            <p><strong>In-App Reporting:</strong></p>
+            <ol>
+                <li>Tap on the user's profile.</li>
+                <li>Select <strong>Report</strong> or <strong>Block/Report</strong>.</li>
+                <li>Choose <strong>Child Safety Concern</strong> as the reason.</li>
+                <li>Provide any additional details to help our team investigate.</li>
+            </ol>
+            <p><strong>Direct Email Reporting:</strong></p>
+            <p>You can also report concerns directly to our designated safety contact:</p>
+            <div class="contact-box">
+                <p>Email: <a href="mailto:shaadowplatforms.g92192@gmail.com?subject=Child Safety Concern&body=I would like to report a child safety concern on Boofer.%0A%0AReported Handle: @[User Handle]%0ADescription of Concern: [Describe incident]">shaadowplatforms.g92192@gmail.com</a></p>
+            </div>
+        </div>
+
+        <div id="compliance" class="section-block">
+            <h2><span class="sec-num">4</span> Legal Compliance</h2>
+            <p>Boofer complies with all relevant national and international child safety laws. We work closely with authorities, including:</p>
+            <ul>
+                <li><strong>NCMEC Reporting:</strong> We are required by law to report any CSAM we become aware of to the National Center for Missing & Exploited Children.</li>
+                <li><strong>Law Enforcement Cooperation:</strong> We cooperate with legal requests from authorities to protect children and prosecute offenders.</li>
+                <li><strong>Regional Authorities:</strong> We comply with regional safety regulations in every country where Boofer is available.</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="section-block">
+            <h2><span class="sec-num">5</span> Contact the Safety Team</h2>
+            <p>Our designated point of contact is ready and able to speak about our CSAM prevention practices and compliance.</p>
+            <div class="contact-box">
+                <h3>Designated Safety Contact</h3>
+                <p>Email: <a href="mailto:shaadowplatforms.g92192@gmail.com?subject=[Boofer Safety] Policy Inquiry">shaadowplatforms.g92192@gmail.com</a></p>
+                <p style="margin-top: 8px; font-size: 13px; color: var(--text-dim);">Assigned Developer Contact: Shaadow Platforms</p>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/legal/privacy-policy" style="color:var(--text-dim) !important">Privacy Policy</a>
+            <a href="/legal/terms-of-service" style="color:var(--text-dim) !important">Terms of Service</a>
+            <a href="/legal/delete-account" style="color:var(--text-dim) !important">Delete Account</a>
+            <a href="/support" style="color:var(--text-dim) !important">Support</a>
+            <p style="width:100%;text-align:center;color:var(--text-dim);font-size:12px;margin-top:8px">&copy; 2026 Shaadow Platforms. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>
